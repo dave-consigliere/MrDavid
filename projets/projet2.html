@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ToDoShare - Application web collaborative de gestion de tâches développée par David Tiendrebeogo">
+  <meta name="keywords" content="ToDoShare, gestion de tâches, application collaborative, React, Node.js, MongoDB">
+  <meta name="author" content="David Tiendrebeogo">
+  <meta name="theme-color" content="#0077b6">
+  <meta property="og:title" content="ToDoShare - Application Collaborative - David Tiendrebeogo">
+  <meta property="og:description" content="Découvrez ToDoShare, une application web moderne pour la gestion collaborative de tâches">
+  <meta property="og:image" content="../images/2DOSHARE.jpg">
+  <meta property="og:url" content="https://davidtiendrebeogo.com/projets/projet2.html">
+  
+  <title>ToDoShare - Application Collaborative - David Tiendrebeogo</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Passer au contenu principal</a>
+
+  <!-- Navigation -->
+  <header role="banner">
+    <div class="logo" aria-label="Logo Mr David">
+      <span>Mr David.</span>
+    </div>
+    <nav role="navigation" aria-label="Navigation principale">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      <ul id="main-menu">
+        <li><a href="../index.html#accueil">Accueil</a></li>
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#certifications">Certifications</a></li>
+        <li><a href="../index.html#blog">Blog</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="project-page">
+    <article class="project-detail">
+      <div class="content-box">
+        <h1>ToDoShare</h1>
+        
+        <figure class="project-image-container">
+          <img src="../images/2DOSHARE.jpg" alt="Interface de l'application ToDoShare montrant la gestion des tâches" class="project-image" loading="lazy">
+          <figcaption>Interface principale de ToDoShare</figcaption>
+        </figure>
+
+        <section class="project-description" aria-labelledby="description-title">
+          <h2 id="description-title">DESCRIPTION</h2>
+          <div class="description-content">
+            <p>ToDoShare est une application web collaborative conçue pour permettre à plusieurs utilisateurs de créer, organiser et suivre des listes de tâches partagées. Que ce soit pour des travaux scolaires, des projets d'équipe ou des tâches domestiques, cette plateforme favorise une gestion simple et efficace des responsabilités communes. Grâce à une interface claire et intuitive, les utilisateurs peuvent se concentrer sur l'essentiel : accomplir leurs objectifs en équipe.</p>
+            <p>Le projet vise à introduire les débutants à des concepts clés du développement web moderne, tout en répondant à un besoin réel : la coordination en ligne. À travers sa construction, on apprend à manipuler des bases de données, à créer des interfaces réactives et à gérer des utilisateurs avec authentification. Il est aussi un bon prétexte pour apprendre la structure d'une API RESTful, les bonnes pratiques de sécurité et l'organisation du code côté client et serveur.</p>
+            <p>En plus de son utilité concrète, ToDoShare peut facilement évoluer : ajout de notifications, gestion des priorités ou intégration d'un calendrier. Cette capacité à être enrichi en fait un excellent projet de base pour apprendre tout en construisant quelque chose de réellement utilisable. Il peut aussi être mis en ligne gratuitement, ce qui permet aux débutants de montrer leur travail et de le tester dans un environnement réel.</p>
+          </div>
+        </section>
+
+        <section class="project-technologies" aria-labelledby="technologies-title">
+          <h2 id="technologies-title">TECHNOLOGIES UTILISÉES</h2>
+          <ul>
+            <li><strong>Frontend</strong> : React.js avec Tailwind CSS pour une interface moderne et responsive</li>
+            <li><strong>Backend</strong> : Node.js et Express.js pour une API RESTful robuste</li>
+            <li><strong>Base de données</strong> : MongoDB avec Mongoose pour un stockage flexible</li>
+            <li><strong>Authentification</strong> : JWT et Bcrypt.js pour la sécurité</li>
+            <li><strong>Temps réel</strong> : Socket.io pour les mises à jour en direct</li>
+            <li><strong>Tests</strong> : Jest et React Testing Library</li>
+            <li><strong>CI/CD</strong> : GitHub Actions pour le déploiement automatisé</li>
+            <li><strong>Hébergement</strong> : Vercel (frontend) et Railway (backend)</li>
+          </ul>
+        </section>
+
+        <section class="project-features" aria-labelledby="features-title">
+          <h2 id="features-title">FONCTIONNALITÉS</h2>
+          <ul>
+            <li><strong>Authentification sécurisée</strong> : Inscription et connexion avec validation</li>
+            <li><strong>Gestion des projets</strong> : Création et partage d'espaces de travail</li>
+            <li><strong>Tâches collaboratives</strong> : Attribution et suivi des responsabilités</li>
+            <li><strong>Interface adaptative</strong> : Design responsive avec mode sombre</li>
+            <li><strong>Notifications</strong> : Alertes en temps réel pour les mises à jour</li>
+            <li><strong>Filtres et recherche</strong> : Organisation efficace des tâches</li>
+            <li><strong>Export de données</strong> : Rapports PDF et CSV des projets</li>
+          </ul>
+        </section>
+
+        <div class="project-navigation">
+          <a href="projet1.html" class="prev-link" aria-label="Voir le projet précédent: SIEM Wazuh">
+            <span class="icon">←</span> Projet Précédent: SIEM Wazuh
+          </a>
+          <a href="../index.html#projets" class="back-link" aria-label="Retour à la liste des projets">
+            Retour aux Projets
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <p>&copy; 2025 David Tiendrebeogo. Tous droits réservés.</p>
+      <div class="social-links" aria-label="Réseaux sociaux">
+        <a href="https://www.linkedin.com/in/david-tiendrebeogo/" target="_blank" rel="noopener noreferrer" aria-label="Visitez mon profil LinkedIn">
+          <img src="../assets/linkedin.png" alt="" class="social-icon" loading="lazy">
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a href="https://www.instagram.com/david.consigliere.tbg?igsh=eW02Mm1ndXI5a3dw" target="_blank" rel="noopener noreferrer" aria-label="Visitez mon profil instagram">
+          <img src="../assets/instagram.png" alt="" class="social-icon" loading="lazy">
+          <span class="sr-only">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/share/1Kxgex4xhY/" target="_blank" rel="noopener noreferrer" aria-label="Visitez mon profil Facebook">
+          <img src="../assets/facebook.png" alt="" class="social-icon" loading="lazy">
+          <span class="sr-only">Facebook</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mise en place d'un SIEM avec Wazuh - Un projet de sécurité informatique par David Tiendrebeogo">
+  <meta name="keywords" content="SIEM, Wazuh, sécurité informatique, cybersécurité, logs, monitoring">
+  <meta name="author" content="David Tiendrebeogo">
+  <meta name="theme-color" content="#0077b6">
+  <meta property="og:title" content="Projet SIEM avec Wazuh - David Tiendrebeogo">
+  <meta property="og:description" content="Découvrez mon projet de mise en place d'un SIEM avec Wazuh pour la sécurité informatique">
+  <meta property="og:image" content="../images/SIEM.jpg">
+  <meta property="og:url" content="https://davidtiendrebeogo.com/projets/projet1.html">
+  
+  <title>Mise en place d'un SIEM avec Wazuh - David Tiendrebeogo</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Passer au contenu principal</a>
+
+  <!-- Navigation -->
+  <header role="banner">
+    <div class="logo" aria-label="Logo Mr David">
+      <span>Mr David.</span>
+    </div>
+    <nav role="navigation" aria-label="Navigation principale">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      <ul id="main-menu">
+        <li><a href="../index.html#accueil">Accueil</a></li>
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#certifications">Certifications</a></li>
+        <li><a href="../index.html#blog">Blog</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="project-page">
+    <article class="project-detail">
+      <div class="content-box">
+        <h1>Mise en place d'un SIEM avec Wazuh</h1>
+        
+        <figure class="project-image-container">
+          <img src="../images/SIEM.jpg" alt="Interface du SIEM Wazuh montrant des tableaux de bord de sécurité" class="project-image" loading="lazy">
+          <figcaption>Dashboard principal du SIEM Wazuh</figcaption>
+        </figure>
+
+        <section class="project-description" aria-labelledby="description-title">
+          <h2 id="description-title">DESCRIPTION</h2>
+          <div class="description-content">
+            <p>Le projet de mise en place d'un SIEM (Security Information and Event Management) avec Wazuh vise à renforcer la sécurité informatique d'une organisation en centralisant, corrélant et analysant en temps réel les événements issus de différents équipements du système d'information. Grâce à Wazuh, une plateforme open-source puissante et flexible, il devient possible de détecter rapidement les menaces, d'automatiser les alertes et de répondre efficacement aux incidents de sécurité.</p>
+            <p>L'architecture du projet repose sur l'installation de l'agent Wazuh sur les machines à surveiller (serveurs, postes clients, équipements réseau), lesquels envoient leurs journaux et événements au serveur Wazuh. Ce dernier est couplé à un moteur de corrélation, une interface Kibana pour la visualisation, et un module d'alerte pour informer les administrateurs en cas d'anomalies. L'objectif est de disposer d'une vue unifiée et dynamique de l'état de sécurité du système d'information.</p>
+            <p>Ce projet contribue non seulement à améliorer la posture de cybersécurité de l'organisation, mais aussi à répondre aux exigences de conformité (ISO 27001, RGPD, etc.). Il permet une meilleure anticipation des risques, une réduction du temps de réponse aux incidents et une traçabilité accrue des événements critiques. Grâce à Wazuh, l'organisation peut évoluer vers une gestion proactive de la sécurité, tout en maîtrisant les coûts liés à l'utilisation de solutions propriétaires.</p>
+          </div>
+        </section>
+
+        <section class="project-technologies" aria-labelledby="technologies-title">
+          <h2 id="technologies-title">TECHNOLOGIES UTILISÉES</h2>
+          <ul>
+            <li><strong>Wazuh Manager</strong> : Composant central pour l'analyse, la corrélation et la gestion des données de sécurité.</li>
+            <li><strong>Wazuh Agent</strong> : Logiciel installé sur les hôtes à surveiller pour collecter les logs et informations système.</li>
+            <li><strong>Elasticsearch</strong> : Moteur de recherche et d'indexation pour stocker et interroger les événements de sécurité.</li>
+            <li><strong>Kibana</strong> : Interface graphique pour visualiser et analyser les données collectées.</li>
+            <li><strong>Filebeat (optionnel)</strong> : Outil de collecte de logs pour envoyer des fichiers journaux vers Elasticsearch.</li>
+            <li><strong>OpenSearch</strong> : Alternative à Elasticsearch/Kibana pour une suite 100 % open-source.</li>
+            <li><strong>Docker</strong> : Pour déployer les composants dans des conteneurs isolés.</li>
+            <li><strong>Ansible/Terraform</strong> : Pour automatiser le déploiement et la configuration.</li>
+            <li><strong>Linux (Ubuntu/CentOS)</strong> : Système d'exploitation pour les serveurs.</li>
+            <li><strong>SSL/TLS</strong> : Pour le chiffrement des communications.</li>
+          </ul>
+        </section>
+
+        <section class="project-features" aria-labelledby="features-title">
+          <h2 id="features-title">FONCTIONNALITÉS</h2>
+          <ul>
+            <li><strong>Collecte centralisée des logs</strong> : Agrégation des journaux système, applicatifs et de sécurité.</li>
+            <li><strong>Détection des intrusions</strong> : Analyse en temps réel des événements suspects.</li>
+            <li><strong>Visualisation avancée</strong> : Tableaux de bord interactifs via Kibana.</li>
+            <li><strong>Alertes personnalisées</strong> : Notifications en fonction de règles définies.</li>
+            <li><strong>Conformité</strong> : Rapports automatisés pour ISO 27001, RGPD, etc.</li>
+          </ul>
+        </section>
+
+        <div class="project-navigation">
+          <a href="../index.html#projets" class="back-link" aria-label="Retour à la liste des projets">
+            <span class="icon">←</span> Retour aux Projets
+          </a>
+          <a href="projet2.html" class="next-link" aria-label="Voir le projet suivant: ToDoShare">
+            Projet Suivant: ToDoShare <span class="icon">→</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <p>&copy; 2025 David Tiendrebeogo. Tous droits réservés.</p>
+      <div class="social-links" aria-label="Réseaux sociaux">
+        <a href="https://www.linkedin.com/in/david-tiendrebeogo/" target="_blank" rel="noopener noreferrer" aria-label="Visitez mon profil LinkedIn">
+          <img src="../assets/linkedin.png" alt="" class="social-icon" loading="lazy">
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a href="https://www.instagram.com/david.consigliere.tbg?igsh=eW02Mm1ndXI5a3dw" target="_blank" rel="noopener noreferrer" aria-label="Visitez mon profil instagram">
+          <img src="../assets/instagram.png" alt="" class="social-icon" loading="lazy">
+          <span class="sr-only">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/share/1Kxgex4xhY/" target="_blank" rel="noopener noreferrer" aria-label="Visitez mon profil Facebook">
+          <img src="../assets/facebook.png" alt="" class="social-icon" loading="lazy">
+          <span class="sr-only">Facebook</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
