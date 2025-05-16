@@ -17,10 +17,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="navigation.js" defer></script>
 </head>
 <body>
   <!-- Skip to main content for accessibility -->
@@ -36,7 +35,7 @@
         <span class="hamburger"></span>
       </button>
       <ul id="main-menu">
-        <li><a href="#accueil" aria-current="page">Accueil</a></li>
+        <li><a href="#accueil">Accueil</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#blog">Blog</a></li>
@@ -60,58 +59,65 @@
     <!-- Section Projets -->
     <section id="projets" aria-labelledby="projets-title">
       <h2 id="projets-title">PROJETS</h2>
-      <ul>
-        <li>
-          <article>
-            <h3>Projet 1 : Mise en place d'un SIEM avec Wazuh</h3>
-            <p>Un SIEM (Security Information and Event Management) est une solution centralisée qui collecte, corrèle, analyse et visualise en temps réel les événements de sécurité issus de différents systèmes informatiques afin de détecter et répondre efficacement aux menaces.</p>
-            <a href="./projets/projet1.html" class="project-link" aria-label="En savoir plus sur le projet SIEM">Voir les détails</a>
-          </article>
-        </li>
-        <li>
-          <article>
-            <h3>Projet 2 : ToDoShare</h3>
-            <p>ToDoShare est une application web collaborative conçue pour permettre à plusieurs utilisateurs de créer, organiser et suivre des listes de tâches partagées.</p>
-            <a href="./projets/projet2.html" class="project-link" aria-label="En savoir plus sur le projet ToDoShare">Voir les détails</a>
-          </article>
-        </li>
-      </ul>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Projet 1 : Mise en place d'un SIEM avec Wazuh</h3>
+          <p>Un SIEM (Security Information and Event Management) est une solution centralisée qui collecte, corrèle, analyse et visualise en temps réel les événements de sécurité.</p>
+          <a href="./projets/projet1.html" class="project-link" aria-label="En savoir plus sur le projet SIEM">Voir les détails</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Projet 2 : ToDoShare</h3>
+          <p>ToDoShare est une application web collaborative conçue pour permettre à plusieurs utilisateurs de créer, organiser et suivre des listes de tâches partagées.</p>
+          <a href="./projets/projet2.html" class="project-link" aria-label="En savoir plus sur le projet ToDoShare">Voir les détails</a>
+        </article>
+      </div>
     </section>
 
     <!-- Section Certifications -->
     <section id="certifications" aria-labelledby="certifications-title">
       <h2 id="certifications-title">CERTIFICATIONS</h2>
-      <div class="certification">
-        <img src="./certifications/certification1.jpg" alt="Badge de certification Web Full-Stack" class="certification-badge" loading="lazy">
-        <div class="certification-details">
-          <h3>Développement Web Full-Stack</h3>
-          <p>Ce certificat atteste de mes compétences en développement web full-stack, couvrant des technologies comme HTML, CSS, Javascript, Node, React, PostgreSQL, Web3 and DApps.</p>
-        </div>
-      </div>
+      <div class="certifications-container">
+        <article class="certification" tabindex="0">
+          <img src="./certifications/certification1.jpg" alt="Badge de certification Web Full-Stack" class="certification-badge" loading="lazy">
+          <div class="certification-details">
+            <h3>Développement Web Full-Stack</h3>
+            <p>Ce certificat atteste de mes compétences en développement web full-stack, couvrant des technologies comme HTML, CSS, Javascript, Node, React, PostgreSQL, Web3 and DApps.</p>
+          </div>
+        </article>
 
-      <div class="certification">
-        <img src="./certifications/certificat2.png" alt="Badge de certification Machine Learning & AI" class="certification-badge" loading="lazy">
-        <div class="certification-details">
-          <h3>Machine Learning & AI</h3>
-          <p>J'ai acquis des compétences approfondies en ingénierie des prompts, permettant d'exploiter efficacement les modèles d'intelligence artificielle.</p>
-        </div>
+        <article class="certification" tabindex="0">
+          <img src="./certifications/certificat2.png" alt="Badge de certification Machine Learning & AI" class="certification-badge" loading="lazy">
+          <div class="certification-details">
+            <h3>Machine Learning & AI</h3>
+            <p>J'ai acquis des compétences approfondies en ingénierie des prompts, permettant d'exploiter efficacement les modèles d'intelligence artificielle.</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- Section Blog -->
     <section id="blog" aria-labelledby="blog-title">
       <h2 id="blog-title">TECH & IA NEWS</h2>
-      <article>
-        <h3>Les Dernières Tendances en Intelligence Artificielle</h3>
-        <p>L'intelligence artificielle (IA) est en pleine expansion...</p>
-        <a href="./blog/article1.html" class="read-more" aria-label="Lire l'article complet sur les tendances en IA">Lire l'article complet</a>
-      </article>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <h3>Les Dernières Tendances en Intelligence Artificielle</h3>
+          <p class="article-excerpt">L'intelligence artificielle (IA) est en pleine expansion...</p>
+          <a href="./blog/article1.html" class="read-more" aria-label="Lire l'article complet sur les tendances en IA">Lire l'article complet</a>
+        </article>
 
-      <article>
-        <h3>Créer un mot de passe inoubliable</h3>
-        <p>Voici un guide pratique pour vous aider à créer des mots de passe inoubliables...</p>
-        <a href="./blog/article2.html" class="read-more" aria-label="Créer un mot de passe inoubliable">Lire l'article complet</a>
-      </article>
+        <article class="blog-card">
+          <h3>Créer un mot de passe inoubliable</h3>
+          <p class="article-excerpt">Guide pratique pour créer des mots de passe forts et faciles à mémoriser...</p>
+          <a href="./blog/article2.html" class="read-more" aria-label="Lire l'article complet sur la création de mots de passe">Lire l'article complet</a>
+        </article>
+
+        <article class="blog-card">
+          <h3>Conseils pour bien utiliser les services de messageries</h3>
+          <p class="article-excerpt">12 conseils pour utiliser WhatsApp, Telegram et autres messageries en sécurité...</p>
+          <a href="./blog/article3.html" class="read-more" aria-label="Lire l'article complet sur la création de mots de passe">Lire l'article complet</a>
+        </article>
+      </div>
     </section>
 
     <!-- Section Contact -->
@@ -141,6 +147,9 @@
     </section>
   </main>
 
+  <!-- Scroll to top button -->
+  <button id="toTop" onclick="topFunction()" title="Retour en haut" aria-label="Retour en haut de la page">↑</button>
+
   <!-- Footer -->
   <footer role="contentinfo">
     <div class="footer-content">
@@ -163,17 +172,22 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const mainMenu = document.getElementById('main-menu');
-      
-      menuToggle.addEventListener('click', function() {
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
-        mainMenu.classList.toggle('active');
-      });
-    });
+    // Scroll to top functionality
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      const button = document.getElementById("toTop");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
   </script>
 </body>
 </html>

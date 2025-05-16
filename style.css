@@ -154,6 +154,9 @@ header nav ul li a:hover {
 
 section {
   animation: fadeIn 1s ease-out;
+  padding: 60px 5%; /* Réduction du padding sur mobile */
+  overflow: hidden; /* Évite les débordements */
+  width: 100%;
 }
 
 
@@ -413,14 +416,9 @@ nav ul li a:hover {
 
 /* Section Certifications */
 #certifications {
-  padding: 80px 10%;
+  padding: 80px 5%;
   background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
 }
-
 
 #certifications h2 {
   font-size: 2.5em;
@@ -428,17 +426,19 @@ nav ul li a:hover {
   text-align: left; /* Aligner le titre à gauche */
   margin-left: 116px; /* Espacer un peu le titre du bord gauche */
 }
+
 /* Conteneur de chaque certification */
 .certification {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  margin-bottom: 40px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 30px;
+  background: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .certification:hover {
@@ -448,26 +448,25 @@ nav ul li a:hover {
 
 /* Style de l'image du badge de certification */
 .certification-badge {
-  width: 400px;  /* Taille du badge */
-  height: 400px;
-  margin-right: 50px;
-  object-fit: contain;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0; /* Empêche l'image de rétrécir */
 }
 
 /* Détails de la certification */
 .certification-details {
-  text-align: left;
-  max-width: 600px;
+  flex: 1;
 }
 
 .certification-details h3 {
-  font-size: 1.5em;
-  color: #333;
-  margin-bottom: 10px;
+  color: #0077b6;
+  margin-bottom: 15px;
+  font-size: 1.4em;
 }
 
 .certification-details p {
-  font-size: 1em;
   color: #666;
   line-height: 1.6;
 }
@@ -566,7 +565,7 @@ footer p {
 /* Small devices (landscape phones) */
 @media (max-width: 768px) {
   header {
-    padding: 20px 5%;
+    padding: 15px 5%;
   }
 
   .intro h2 {
@@ -741,115 +740,117 @@ footer p {
   border: 0;
 }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.hamburger {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #333;
-  position: relative;
-  transition: background 0.3s ease;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #333;
-  transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-  transform: translateY(-8px);
-}
-
-.hamburger::after {
-  transform: translateY(8px);
-}
-
-/* Form Styles */
-.form-group {
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.error-message {
-  color: #dc3545;
-  font-size: 0.875em;
-  margin-top: 5px;
-  display: block;
-}
-
-input:invalid,
-textarea:invalid {
-  border-color: #dc3545;
-}
-
-/* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-  .hamburger,
-  .hamburger::before,
-  .hamburger::after {
-    background: #e0e0e0;
-  }
-  
-  #contact-form {
-    background-color: #1a1a1a;
-  }
-  
-  input, textarea {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    border-color: #404040;
-  }
-  
-  input:focus, textarea:focus {
-    border-color: #0077b6;
-    background-color: #333;
-  }
-}
-
-/* Mobile Responsive Adjustments */
+/* Styles pour le menu mobile */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  
-  header nav ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  header nav ul.active {
-    display: block;
-  }
-  
-  header nav ul li {
-    margin: 10px 0;
-    text-align: center;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    header nav ul {
-      background: #1a1a1a;
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1000;
     }
-  }
+
+    .hamburger {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #333;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: #333;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger::before {
+        transform: translateY(-8px);
+    }
+
+    .hamburger::after {
+        transform: translateY(8px);
+    }
+
+    /* Animation du hamburger */
+    .menu-toggle[aria-expanded="true"] .hamburger {
+        background: transparent;
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger::before {
+        transform: rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger::after {
+        transform: rotate(-45deg);
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    nav ul.active {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul li {
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        text-align: center;
+        color: #333;
+        text-decoration: none;
+    }
+
+    /* Dark mode adjustments */
+    @media (prefers-color-scheme: dark) {
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+            background: #fff;
+        }
+
+        nav ul {
+            background: #2a2a2a;
+        }
+
+        nav ul li {
+            border-bottom-color: #444;
+        }
+
+        nav ul li a {
+            color: #fff;
+        }
+    }
 }
 
 /* Touch Device Optimizations */
@@ -1343,5 +1344,210 @@ button[type="submit"].loading::after {
   
   .next-article {
     text-align: left;
+    }
+}
+
+/* Media Queries - Adaptation Mobile */
+@media (max-width: 1200px) {
+  section {
+    padding: 60px 5%;
+  }
+
+  .certification-badge {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 992px) {
+  .certification {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .certification-details h3 {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 4%;
+  }
+
+  .certification {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .certification-badge {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+
+  .certification-details {
+    width: 100%;
+  }
+
+  /* Amélioration de la navigation mobile */
+  header {
+    padding: 15px 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul.active {
+    display: block;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  section {
+    padding: 30px 3%;
+  }
+
+  .certification {
+    padding: 15px;
+  }
+
+  .certification-details h3 {
+    font-size: 1.1em;
+  }
+
+  .certification-details p {
+    font-size: 0.9em;
+  }
+
+  /* Ajustements pour les autres sections */
+  .intro h2 {
+    font-size: 2em;
+  }
+
+  .intro p {
+    font-size: 1em;
+  }
+
+  #projets h2, #blog h2, #contact h2 {
+    font-size: 1.8em;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .certification {
+    background: #2a2a2a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .certification-details h3 {
+    color: #4dabf7;
+  }
+
+  .certification-details p {
+    color: #ddd;
+  }
+}
+
+/* Animations fluides */
+.certification {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Amélioration de l'accessibilité */
+.certification:focus-within {
+  outline: 2px solid #0077b6;
+  outline-offset: 2px;
+}
+
+/* Optimisation des performances */
+.certification {
+  will-change: transform;
+}
+
+/* Styles pour le contenu des autres sections */
+#projets, #blog, #contact {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card, .blog-card, .contact-form {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* Grille responsive pour les projets et le blog */
+.projects-grid, .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+/* Formulaire de contact responsive */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Bouton de retour en haut responsive */
+#toTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  #toTop {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 12px;
     }
 }
