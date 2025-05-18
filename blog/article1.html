@@ -21,6 +21,11 @@
   <script src="../navigation.js" defer></script>
 </head>
 <body>
+  <!-- Reading Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="readingProgress"></div>
+  </div>
+
   <!-- Skip to main content for accessibility -->
   <a href="#main-content" class="skip-link">Passer au contenu principal</a>
 
@@ -50,7 +55,12 @@
   <!-- Section Article -->
     <main id="main-content">
       <article class="article-detail">
-      <h1>Les Dernières Tendances en Intelligence Artificielle</h1>
+        <h1>Les Dernières Tendances en Intelligence Artificielle</h1>
+        <div class="article-meta">
+          <span class="reading-time">Temps de lecture estimé: <span id="readingTime">5</span> minutes</span>
+          <span class="publication-date">Publié le 10 mai 2025</span>
+          <button class="keyboard-shortcuts-btn" aria-label="Voir les raccourcis clavier" onclick="toggleShortcutsHelp()">⌨️ Raccourcis</button>
+        </div>
         <img src="../images/IA.png" alt="Illustration des technologies d'Intelligence Artificielle" class="article-image" loading="lazy">
 
       <div class="article-description">
@@ -75,6 +85,56 @@
 
         <h2>Conclusion</h2>
         <p>Le futur de l'intelligence artificielle est prometteur. À mesure que ces technologies continueront à évoluer, elles joueront un rôle de plus en plus important dans notre vie quotidienne, façonnant de nouveaux outils, processus et produits qui transformeront la manière dont nous vivons et travaillons.</p>
+      </div>
+
+      <!-- Keyboard Shortcuts Help -->
+      <div id="keyboardShortcuts" class="keyboard-shortcuts" hidden>
+        <h4>Raccourcis Clavier</h4>
+        <ul>
+          <li><kbd>Alt</kbd> + <kbd>←</kbd> Article précédent</li>
+          <li><kbd>Alt</kbd> + <kbd>→</kbd> Article suivant</li>
+          <li><kbd>Alt</kbd> + <kbd>↑</kbd> Haut de page</li>
+          <li><kbd>Alt</kbd> + <kbd>Home</kbd> Retour au blog</li>
+        </ul>
+      </div>
+
+      <!-- Social Sharing -->
+      <div class="social-share">
+        <a href="https://twitter.com/intent/tweet?url=https://davidtiendrebeogo.com/blog/article1.html&text=Les Dernières Tendances en Intelligence Artificielle" class="share-button share-twitter" target="_blank" rel="noopener noreferrer">
+          <i>🐦</i> Twitter
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://davidtiendrebeogo.com/blog/article1.html" class="share-button share-facebook" target="_blank" rel="noopener noreferrer">
+          <i>📘</i> Facebook
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://davidtiendrebeogo.com/blog/article1.html&title=Les Dernières Tendances en Intelligence Artificielle" class="share-button share-linkedin" target="_blank" rel="noopener noreferrer">
+          <i>💼</i> LinkedIn
+        </a>
+        <a href="https://www.instagram.com/david.consigliere.tbg" class="share-button share-instagram" target="_blank" rel="noopener noreferrer">
+          <i>📸</i> Instagram
+        </a>
+      </div>
+
+      <!-- Related Articles -->
+      <div class="related-articles">
+        <h3>Articles Similaires</h3>
+        <div class="related-articles-grid">
+          <article class="related-article-card">
+            <img src="../images/Mot2Pass.jpg" alt="Sécurité des mots de passe" loading="lazy">
+            <div class="related-article-content">
+              <h4>Créer un mot de passe inoubliable</h4>
+              <p>Guide pratique pour créer des mots de passe forts et faciles à mémoriser...</p>
+              <a href="article2.html" class="read-more">Lire l'article</a>
+            </div>
+          </article>
+          <article class="related-article-card">
+            <img src="../images/WTMS.jpg" alt="Sécurité des messageries" loading="lazy">
+            <div class="related-article-content">
+              <h4>Conseils pour les services de messagerie</h4>
+              <p>12 conseils pour utiliser WhatsApp, Telegram et autres messageries en sécurité...</p>
+              <a href="article3.html" class="read-more">Lire l'article</a>
+            </div>
+          </article>
+        </div>
       </div>
 
         <div class="article-navigation">
@@ -120,6 +180,65 @@
   </footer>
 
   <script>
+    // Calculate reading time
+    document.addEventListener('DOMContentLoaded', function() {
+      const text = document.querySelector('.article-description').textContent;
+      const wordCount = text.trim().split(/\s+/).length;
+      const readingTime = Math.ceil(wordCount / 200); // Assuming 200 words per minute
+      document.getElementById('readingTime').textContent = readingTime;
+    });
+
+    // Keyboard Navigation
+    document.addEventListener('keydown', function(e) {
+      // Alt + Left Arrow: Previous Article
+      if (e.altKey && e.key === 'ArrowLeft') {
+        const prevLink = document.querySelector('.prev-article a');
+        if (prevLink) prevLink.click();
+      }
+      // Alt + Right Arrow: Next Article
+      if (e.altKey && e.key === 'ArrowRight') {
+        const nextLink = document.querySelector('.next-article a');
+        if (nextLink) nextLink.click();
+      }
+      // Alt + Home: Back to Blog List
+      if (e.altKey && e.key === 'Home') {
+        const backLink = document.querySelector('.back-to-blog a');
+        if (backLink) backLink.click();
+      }
+      // Alt + Up Arrow: Scroll to Top
+      if (e.altKey && e.key === 'ArrowUp') {
+        topFunction();
+      }
+    });
+
+    // Reading Progress
+    window.onscroll = function() {
+      scrollFunction();
+      updateReadingProgress();
+    };
+
+    function updateReadingProgress() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("readingProgress").style.width = scrolled + "%";
+    }
+
+    // Existing scroll to top functionality
+    function scrollFunction() {
+      var button = document.getElementById("toTop");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
     // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', function() {
       const menuToggle = document.querySelector('.menu-toggle');
@@ -132,21 +251,10 @@
       });
     });
 
-    // Scroll to top functionality
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-        var button = document.getElementById("toTop");
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            button.style.display = "block";
-        } else {
-            button.style.display = "none";
-        }
-    }
-
-    function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    // Keyboard shortcuts help toggle
+    function toggleShortcutsHelp() {
+      const shortcuts = document.getElementById('keyboardShortcuts');
+      shortcuts.hidden = !shortcuts.hidden;
     }
   </script>
 </body>

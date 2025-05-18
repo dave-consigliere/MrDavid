@@ -13,6 +13,29 @@
   <meta property="og:url" content="https://davidtiendrebeogo.com">
   
   <title>David Tiendrebeogo - Développeur Full-Stack & Technicien en Télécommunications</title>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "David Tiendrebeogo",
+      "jobTitle": "Développeur Full-Stack & Technicien en Télécommunications",
+      "url": "https://davidtiendrebeogo.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/david-tiendrebeogo/",
+        "https://www.instagram.com/david.consigliere.tbg",
+        "https://www.facebook.com/share/1Kxgex4xhY/"
+      ],
+      "knowsAbout": [
+        "Développement Web",
+        "SIEM",
+        "Intelligence Artificielle",
+        "Télécommunications"
+      ]
+    }
+  </script>
+  
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,7 +122,13 @@
     <!-- Section Blog -->
     <section id="blog" aria-labelledby="blog-title">
       <h2 id="blog-title">TECH & IA NEWS</h2>
-      <div class="blog-grid">
+      
+      <!-- Search Bar -->
+      <div class="blog-search">
+        <input type="search" id="articleSearch" placeholder="Rechercher un article..." aria-label="Rechercher un article">
+      </div>
+
+      <div class="blog-grid" id="blogGrid">
         <article class="blog-card">
           <h3>Les Dernières Tendances en Intelligence Artificielle</h3>
           <p class="article-excerpt">L'intelligence artificielle (IA) est en pleine expansion...</p>
@@ -116,6 +145,12 @@
           <h3>Conseils pour bien utiliser les services de messageries</h3>
           <p class="article-excerpt">12 conseils pour utiliser WhatsApp, Telegram et autres messageries en sécurité...</p>
           <a href="./blog/article3.html" class="read-more" aria-label="Lire l'article complet sur la création de mots de passe">Lire l'article complet</a>
+        </article>
+
+        <article class="blog-card">
+          <h3>Guide OpenAI : 5 Stratégies pour des Prompts Efficaces</h3>
+          <p class="article-excerpt">OpenAI vient de publier son guide complet sur l'écriture de prompts...</p>
+          <a href="./blog/article4.html" class="read-more" aria-label="Lire l'article complet sur l'écriture de prompts'">Lire l'article complet</a>
         </article>
       </div>
     </section>
@@ -172,7 +207,30 @@
   </footer>
 
   <script>
-    // Scroll to top functionality
+    // Blog Search Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('articleSearch');
+      const articles = document.querySelectorAll('.blog-card');
+      
+      searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        
+        articles.forEach(article => {
+          const title = article.querySelector('h3').textContent.toLowerCase();
+          const excerpt = article.querySelector('.article-excerpt').textContent.toLowerCase();
+          
+          if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+            article.classList.remove('hidden');
+            article.classList.add('visible');
+          } else {
+            article.classList.add('hidden');
+            article.classList.remove('visible');
+          }
+        });
+      });
+    });
+
+    // Existing scroll to top functionality
     window.onscroll = function() {scrollFunction()};
 
     function scrollFunction() {

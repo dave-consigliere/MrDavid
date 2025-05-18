@@ -50,6 +50,11 @@
         <main id="main-content">
             <article class="article-detail">
                 <h1>12 conseils pour utiliser WhatsApp, Telegram et autres messageries en sécurité</h1>
+                <div class="article-meta">
+                    <span class="reading-time">Temps de lecture estimé: <span id="readingTime">5</span> minutes</span>
+                    <span class="publication-date">Publié le 16 mai 2025</span>
+                    <button class="keyboard-shortcuts-btn" aria-label="Voir les raccourcis clavier" onclick="toggleShortcutsHelp()">⌨️ Raccourcis</button>
+                </div>
                 <img src="../images/WTMS.jpg" alt="Illustration de la sécurité des applications de messagerie" class="article-image" loading="lazy">
 
                 <div class="article-description">
@@ -156,6 +161,36 @@
                         <h3>Ce qu'il faut faire</h3>
                         <p>Ouvrez la section Confidentialité dans les paramètres de l'application de messagerie et choisissez qui peut voir les informations suivantes : « Dernière activité », « Photo de profil », « Statut », etc. Par défaut, ces données sont visibles par tous. Réglez les paramètres selon vos préférences, en choisissant « Mes contacts » ou « Personne ».</p>
                     </section>
+
+                    <h2>Conclusion</h2>
+                    <p>La sécurité et la confidentialité dans les applications de messagerie sont essentielles dans notre monde numérique. En suivant ces conseils, vous pouvez profiter des avantages de ces outils tout en protégeant vos données et votre vie privée.</p>
+                </div>
+
+                <!-- Keyboard Shortcuts Help -->
+                <div id="keyboardShortcuts" class="keyboard-shortcuts" hidden>
+                    <h4>Raccourcis Clavier</h4>
+                    <ul>
+                        <li><kbd>Alt</kbd> + <kbd>←</kbd> Article précédent</li>
+                        <li><kbd>Alt</kbd> + <kbd>→</kbd> Article suivant</li>
+                        <li><kbd>Alt</kbd> + <kbd>↑</kbd> Haut de page</li>
+                        <li><kbd>Alt</kbd> + <kbd>Home</kbd> Retour au blog</li>
+                    </ul>
+                </div>
+
+                <!-- Social Sharing -->
+                <div class="social-share">
+                    <a href="https://twitter.com/intent/tweet?url=https://davidtiendrebeogo.com/blog/article3.html&text=12 conseils pour utiliser WhatsApp, Telegram et autres messageries" class="share-button share-twitter" target="_blank" rel="noopener noreferrer">
+                        <i>🐦</i> Twitter
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://davidtiendrebeogo.com/blog/article3.html" class="share-button share-facebook" target="_blank" rel="noopener noreferrer">
+                        <i>📘</i> Facebook
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://davidtiendrebeogo.com/blog/article3.html&title=12 conseils pour utiliser WhatsApp, Telegram et autres messageries" class="share-button share-linkedin" target="_blank" rel="noopener noreferrer">
+                        <i>💼</i> LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/david.consigliere.tbg" class="share-button share-instagram" target="_blank" rel="noopener noreferrer">
+                        <i>📸</i> Instagram
+                    </a>
                 </div>
 
                 <div class="article-navigation">
@@ -169,7 +204,12 @@
                     </div>
                     
                     <div class="next-article">
-                        <!-- Espace réservé pour le prochain article -->
+                        <a href="article4.html">
+                            <div>
+                                <span class="nav-label">Article Suivant</span>
+                                <div class="nav-title">Guide OpenAI : 5 Stratégies pour des Prompts Efficaces <span class="nav-arrow">→</span></div>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
@@ -202,6 +242,43 @@
     </footer>
 
     <script>
+        // Calculate reading time
+        document.addEventListener('DOMContentLoaded', function() {
+            const text = document.querySelector('.article-description').textContent;
+            const wordCount = text.trim().split(/\\s+/).length;
+            const readingTime = Math.ceil(wordCount / 200); // Assuming 200 words per minute
+            document.getElementById('readingTime').textContent = readingTime;
+        });
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', function(e) {
+            // Alt + Left Arrow: Previous Article
+            if (e.altKey && e.key === 'ArrowLeft') {
+                const prevLink = document.querySelector('.prev-article a');
+                if (prevLink) prevLink.click();
+            }
+            // Alt + Right Arrow: Next Article
+            if (e.altKey && e.key === 'ArrowRight') {
+                const nextLink = document.querySelector('.next-article a');
+                if (nextLink) nextLink.click();
+            }
+            // Alt + Home: Back to Blog
+            if (e.altKey && e.key === 'Home') {
+                const backLink = document.querySelector('.back-to-blog a');
+                if (backLink) backLink.click();
+            }
+            // Alt + Up Arrow: Scroll to Top
+            if (e.altKey && e.key === 'ArrowUp') {
+                topFunction();
+            }
+        });
+
+        // Keyboard shortcuts help toggle
+        function toggleShortcutsHelp() {
+            const shortcuts = document.getElementById('keyboardShortcuts');
+            shortcuts.hidden = !shortcuts.hidden;
+        }
+
         // Scroll to top functionality
         window.onscroll = function() {scrollFunction()};
 
